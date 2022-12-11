@@ -2,6 +2,7 @@ package lab1
 
 import lab1.InsertionSort.insertionSort
 import lab1.MergeInsertionSort.hybridMergeInsertionSort
+import java.util.*
 
 
 object MergeInsertionSort {
@@ -55,7 +56,7 @@ fun main(args: Array<String>) {
     println("Enter arrays amount, arrays length and arrays max element:")
     val (arraysNumber, arraySize, maxElement) = readLine()!!.split(" ").map { it.toInt() }
 
-    val array = ArrayHandler.createNRandomArrays(arraysNumber, arraySize, maxElement)
+    val array = ArrayHandler.createNRandomArrays(arraysNumber, arraySize, maxElement, Random(1000L))
     array.forEach {
         hybridMergeInsertionSort(it, 0, it.size - 1)
     }

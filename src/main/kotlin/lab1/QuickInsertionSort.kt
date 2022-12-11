@@ -2,8 +2,10 @@ package lab1
 
 import lab1.ArrayHandler.createNRandomArrays
 import lab1.ArrayHandler.printNArrays
+import lab1.ArrayHandler.swapArray
 import lab1.InsertionSort.insertionSort
 import lab1.QuickInsertionSort.quickInsertionSort
+import java.util.*
 
 object QuickInsertionSort {
 
@@ -52,11 +54,6 @@ object QuickInsertionSort {
         return left
     }
 
-    private fun swapArray(a: IntArray, b: Int, c: Int) {
-        val temp = a[b]
-        a[b] = a[c]
-        a[c] = temp
-    }
 
 }
 
@@ -64,7 +61,7 @@ fun main(args: Array<String>) {
     println("Enter arrays amount, arrays length and arrays max element:")
     val (arraysNumber, arraySize, maxElement) = readLine()!!.split(" ").map { it.toInt() }
 
-    val array = createNRandomArrays(arraysNumber, arraySize, maxElement)
+    val array = createNRandomArrays(arraysNumber, arraySize, maxElement, Random(1000L))
     printNArrays(array)
 
     array.forEach {
