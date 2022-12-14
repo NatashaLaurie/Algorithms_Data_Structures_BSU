@@ -42,7 +42,7 @@ object QuickSort {
         return quickSortMedianOfThree(less) + equal + quickSortMedianOfThree(greater)
     }
 
-    fun medianOfThree(array: IntArray): Int {
+    private fun medianOfThree(array: IntArray): Int {
         val low = 0
         val high = array.size - 1
         val mid = (low + high) / 2

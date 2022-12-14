@@ -3,13 +3,14 @@ package lab1
 import lab1.ArrayHandler.createNRandomArrays
 import lab1.ArrayHandler.printNArrays
 import lab1.ArrayHandler.swapArray
-import lab1.InsertionSort.insertionSort
+import lab1.QuickInsertionSort.counter
 import lab1.QuickInsertionSort.quickInsertionSort
 import java.util.*
 
 object QuickInsertionSort {
 
     private const val THRESHOLD: Int = 16
+     var counter = 0;
 
     fun quickInsertionSort(array: IntArray, l: Int, r: Int) {
         var left = l
@@ -32,6 +33,23 @@ object QuickInsertionSort {
                 }
             }
         }
+    }
+    private fun insertionSort(array: IntArray, left: Int, right: Int): Int {
+        for (i in left..right) { // n times (n = right - left)
+            val key = array[i] // n-1 times
+            counter+=2
+            var j = i // n-1 times
+            counter++
+            while (j > left && array[j - 1] > key) { // 1 time in sorted array, n(n+1)/2 times in reversed sorted array,
+                array[j] = array[j - 1]
+                counter+=2
+                j--
+                counter+=2
+            }
+            array[j] = key // n-1 times
+            counter+=2
+        }
+        return counter
     }
 
 
@@ -63,10 +81,14 @@ fun main(args: Array<String>) {
 
     val array = createNRandomArrays(arraysNumber, arraySize, maxElement, Random(1000L))
     printNArrays(array)
+    val start1 = System.currentTimeMillis()
 
     array.forEach {
         quickInsertionSort(it, 0, it.size - 1)
     }
     printNArrays(array)
+    val end1 = System.currentTimeMillis()
+    println("Middle key sort time: ${end1 - start1} ms")
+    println("number of elementary operations: $counter")
 }
 

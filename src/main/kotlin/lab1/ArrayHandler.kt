@@ -1,7 +1,6 @@
 package lab1
 
 import java.util.*
-import kotlin.math.ln
 
 object ArrayHandler {
 
@@ -15,7 +14,7 @@ object ArrayHandler {
         return array
     }
 
-    fun createArray(size: Int, randomTo: Int, random: Random) : IntArray {
+    fun createArray(size: Int, randomTo: Int, random: Random): IntArray {
         val array = IntArray(size)
         for (i in 0 until size) {
             array[i] = random.nextInt(0, randomTo)
@@ -38,6 +37,7 @@ object ArrayHandler {
     fun printNArrays(array: Array<IntArray>) {
         array.forEach { printArray(it) }
     }
+
     private fun printArray(array: IntArray) = println(array.contentToString())
 
     fun swapArray(a: IntArray, b: Int, c: Int) {
