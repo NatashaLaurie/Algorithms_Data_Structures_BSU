@@ -1,0 +1,25 @@
+;1.9. G={a,b}. Determine whether P is a palindrome
+
+q0 a _ R q1
+q0 b _ R q2
+q0 _ _ N haltY
+
+q1 a a R q1
+q1 b b R q1
+q1 _ _ L q3
+
+q2 a a R q2
+q2 b b R q2
+q2 _ _ L q4
+
+q3 a _ L q5
+q3 b b N haltN
+q3 _ _ N haltY
+
+q4 a a N haltN
+q4 b _ L q5
+q4 _ _ N haltY
+
+q5 a a L q5
+q5 b b L q5
+q5 _ _ R q0

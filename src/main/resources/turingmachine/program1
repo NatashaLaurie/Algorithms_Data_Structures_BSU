@@ -1,0 +1,17 @@
+; 2.8. G={a,b,c}. After the first character of the
+; non-empty word P, insert the character c.
+
+q0 _ _ R q0
+q0 a a L q1
+q0 b b L q2
+q0 c c L q3
+
+q1 _ a R q4
+
+q2 _ b R q4
+
+q3 _ c R q4
+
+q4 a c N haltY
+q4 b c N haltY
+q4 c c N haltY

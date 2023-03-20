@@ -1,0 +1,63 @@
+2.8. G={a,b,c}. After the first character of the non-empty word P, insert the character c.
+[START] Started running program.
+[0] ab
+[1] _ab
+[2] aab
+[3] acb
+haltY
+
+[START] Started running program.
+[0] ccc
+[1] _ccc
+[2] cccc
+[3] cccc
+haltY
+
+[START] Started running program.
+[0] acc
+[1] _acc
+[2] aacc
+[3] accc
+haltY
+
+1.9. G={a,b}. Determine whether word is a palindrome
+[START] Started running program.
+[0] abba
+[1] _bba
+[2] _bba
+[3] _bba
+[4] _bba_
+[5] _bba_
+[6] _bb__
+[7] _bb__
+[8] _bb__
+[9] _bb__
+[10] __b__
+[11] __b__
+[12] __b__
+[13] _____
+[14] _____
+[15] _____
+haltY
+
+[START] Started running program.
+[0] aba
+[1] _ba
+[2] _ba
+[3] _ba_
+[4] _ba_
+[5] _b__
+[6] _b__
+[7] _b__
+[8] ____
+[9] ____
+[10] ____
+haltY
+
+[START] Started running program.
+[0] ba
+[1] _a
+[2] _a_
+[3] _a_
+[4] _a_
+haltN
